@@ -1,0 +1,22 @@
+class Solution {
+    public int[][] flipAndInvertImage(int[][] image) {
+        int rows = image.length;
+        int cols = image[0].length;
+        int[][]res = new int[rows][cols];
+        int[][]finres = new int[rows][cols];
+        for(int i =0;i<rows; i++){
+            for(int j =0; j<cols;j++){
+                int k = image[i].length-1-j;
+                res[i][k] = image[i][j];
+                if (res[i][k] ==0){
+                    finres[i][k]= 1;
+                }else{
+                    finres[i][k]=0;
+                }
+            }
+
+        }
+        return finres;
+        
+    }
+}
